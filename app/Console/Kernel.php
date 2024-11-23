@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     }
 
     protected $commands = [
-        \App\Console\Commands\MakeInterfaceCommand::class,
+        \App\Console\Commands\MakeRepositoryCommand::class,
     ];
 
 
