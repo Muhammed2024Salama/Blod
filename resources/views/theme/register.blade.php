@@ -10,26 +10,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action="#/" class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                    <form action="{{ route('register.post') }}" class="form-contact contact_form" method="post" novalidate="novalidate">
+                        @csrf
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <input class="form-control border" name="name" id="name" type="text" placeholder="Enter your name">
+                                    <input class="form-control border" name="name" value="{{ old('name') }}" type="text" placeholder="Enter your name">
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control border" name="email" id="email" type="email" placeholder="Enter email address">
+                                    <input class="form-control border" name="email" value="{{ old('email') }}" type="email" placeholder="Enter email address">
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <input class="form-control border" name="password" id="name" type="password" placeholder="Enter your password">
+                                    <input class="form-control border" name="password" type="password" placeholder="Enter your password">
+                                    @error('password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control border" name="password_confirmation" type="password" placeholder="Enter your password confirmation">
+                                    @error('password_confirmation')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="form-group text-center text-md-right mt-3">
+                            <a href="{{ route('login') }}" class="mx-3">Already Registered !?</a>
                             <button type="submit" class="button button--active button-contactForm">Register</button>
                         </div>
                     </form>
