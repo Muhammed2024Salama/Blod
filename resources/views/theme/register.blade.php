@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="form-group text-center text-md-right mt-3">
-                            <a href="{{ route('login') }}" class="mx-3">Already Registered !?</a>
+                            <a href="{{ route('login') }}" class="btn btn-sm btn-primary">Already Registered !?</a>
                             <button type="submit" class="button button--active button-contactForm">Register</button>
                         </div>
                     </form>
